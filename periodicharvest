@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt 
+
+h = 2
+o = 1 
+r = 0.05
+
+g = 1.28
+k = 0.004 # carrying capacity
+
+def next(p):
+    return g*p*(1-p/k)
+
+data = []
+p = 0.0001
+for i in range(1000):
+    data += [p]
+    p = next(p)
+plt.plot(range(1000), data, "-", label = "wolf population")
